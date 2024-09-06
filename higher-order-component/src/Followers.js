@@ -1,15 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import Spinner from "./Spinner";
 import withData from "./withData";
 import B from "./B";
+import C from "./C";
+import { userContext } from ".//Context/UserContext";
 
 function Followers(props) {
+  const user = useContext(userContext);
+
   if (!props.data) {
     return <Spinner />;
   }
+
   return (
     <>
-      <h1>List of followers</h1>
+      <h1>List of followers for {user.username}</h1>
       <ul
         style={{
           display: "flex",
@@ -31,6 +36,7 @@ function Followers(props) {
           </li>
         ))}
       </ul>
+      <C />
       <B />
     </>
   );

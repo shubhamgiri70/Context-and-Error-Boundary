@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import Spinner from "./Spinner";
 import withData from "./withData";
 import A from "./A";
+import { userContext } from ".//Context/UserContext";
 
 function Following(props) {
+  const user = useContext(userContext);
+
   if (!props.data) {
     return <Spinner />;
   }
+
   return (
     <>
-      <h1>List of following!</h1>
+      <h1>List of following for {user.username}!</h1>
       <ul
         style={{
           display: "flex",
