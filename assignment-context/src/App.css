@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.app .light {
+  background-color: white;
+  color: black;
+}
+
+.app .dark {
+  background-color: black;
+  color: white;
+}
+
+.navbar {
+  padding: 1rem;
+  background-color: grey;
+}
+
+.dashboard {
+  padding: 1.3rem;
+}
+
+.widget {
+  padding: 1.6rem;
+  border: 1px solid;
+}
