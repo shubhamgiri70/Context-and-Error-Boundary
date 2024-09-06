@@ -1,5 +1,9 @@
+import { useContext } from "react";
+import { userContext } from ".//Context/UserContext";
+
 function A() {
-  return <h1>Hello A Component</h1>;
+  const user = useContext(userContext);
+  return <h1>Hello {user.username}</h1>;
 }
 
 export default A;

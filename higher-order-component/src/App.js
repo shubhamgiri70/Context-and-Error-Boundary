@@ -1,7 +1,7 @@
+import React from "react";
+import { userContext } from ".//Context/UserContext";
 import Followers from "./Followers";
 import Following from "./Following";
-import { useContext } from "react";
-import React from "react";
 
 class App extends React.Component {
   state = {
@@ -9,13 +9,14 @@ class App extends React.Component {
     name: "Sid",
     token: "sjejodc2co29rcskk",
   };
+
   render() {
     return (
       <>
-        <useContext.Provider value={this.state}>
+        <userContext.Provider value={this.state}>
           <Followers />
           <Following />
-        </useContext.Provider>
+        </userContext.Provider>
       </>
     );
   }
