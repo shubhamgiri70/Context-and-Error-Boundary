@@ -1,11 +1,15 @@
+// components/Navbar.js
 import React from "react";
+import { useTheme } from "../ThemeContext";
 
-function Navbar(props) {
+function Navbar() {
+  const { theme, toggleTheme } = useTheme();
+
   return (
-    <nav className={`navbar ${props.theme}`}>
+    <nav className={`navbar ${theme}`}>
       <h1>App Navbar</h1>
-      <button onClick={props.toggleTheme}>
-        Switch to {props.theme === "light" ? "dark" : "light"} Mode
+      <button onClick={toggleTheme}>
+        Switch to {theme === "light" ? "Dark" : "Light"} Mode
       </button>
     </nav>
   );

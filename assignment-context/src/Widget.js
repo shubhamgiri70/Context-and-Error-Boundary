@@ -1,9 +1,13 @@
+// components/Widget.js
 import React from "react";
+import { useTheme } from "../ThemeContext";
 
-function Widget(props) {
+function Widget() {
+  const { theme } = useTheme();
+
   return (
-    <div className={`widget ${props.theme}`}>
-      <p>this is widget</p>
+    <div className={`widget ${theme}`}>
+      <p>This is a widget component.</p>
     </div>
   );
 }
