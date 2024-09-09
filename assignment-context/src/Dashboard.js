@@ -1,11 +1,15 @@
+// components/Dashboard.js
 import React from "react";
+import { useTheme } from "../ThemeContext";
 import Widget from "./Widget";
 
-function Dashboard(props) {
+function Dashboard() {
+  const { theme } = useTheme();
+
   return (
-    <div className={`dashboard ${props.theme}`}>
+    <div className={`dashboard ${theme}`}>
       <h2>Dashboard</h2>
-      <Widget theme={props.theme} />
+      <Widget />
     </div>
   );
 }

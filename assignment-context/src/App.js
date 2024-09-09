@@ -1,23 +1,19 @@
+// App.js
 import React from "react";
-import Navbar from "./Navbar";
-import Dashboard from "./Dashboard";
-import { useState } from "react";
+import Navbar from "./components/Navbar";
+import Dashboard from "./components/Dashboard";
+import { ThemeProvider } from "./ThemeContext";
 
 function App() {
-  const [theme, setTheme] = useState("light");
-
-  const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
-  };
-
   return (
-    <>
-      <div className={`app ${theme}`}>
-        <Navbar theme={theme} toggleTheme={toggleTheme} />
-        <Dashboard theme={theme} />
+    <ThemeProvider>
+      <div className="App">
+        <Navbar />
+        <Dashboard />
       </div>
-    </>
+    </ThemeProvider>
   );
 }
 
 export default App;
+
